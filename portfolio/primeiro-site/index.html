@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport Club Corinthians Paulista</title>
+<style>
+  :root{
+    --preto: #0e0e0e;
+    --preto-suave: #1a1a1a;
+    --branco: #f5f5f3;
+    --cinza: #8c8c88;
+    --linha: #2c2c2c;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  body{
+    background:var(--preto);
+    color:var(--branco);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height:1.6;
+  }
+
+  header.apresentacao{
+    min-height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding: 4rem 1.5rem;
+    border-bottom:1px solid var(--linha);
+  }
+
+  .escudo{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:3px solid var(--branco);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:2rem;
+    background:radial-gradient(circle at 35% 30%, #2a2a2a, #0a0a0a 70%);
+    box-shadow: 0 0 0 1px var(--linha), 0 20px 40px rgba(0,0,0,.5);
+  }
+
+  .escudo span{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight:700;
+    font-size:2.6rem;
+    letter-spacing:-1px;
+  }
+
+  h1.nome-clube{
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight:400;
+    letter-spacing:1px;
+    margin-bottom: 0.8rem;
+  }
+
+  .apresentacao .dados{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    color:var(--cinza);
+    font-size:1rem;
+    display:flex;
+    gap:1.2rem;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .apresentacao .dados span:not(:last-child)::after{
+    content:"";
+    display:inline-block;
+    width:4px;
+    height:4px;
+    background:var(--cinza);
+    border-radius:50%;
+    margin-left:1.2rem;
+    vertical-align:middle;
+  }
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding: 0 1.5rem;
+  }
+
+  section{
+    padding: 4rem 0;
+    border-bottom:1px solid var(--linha);
+  }
+
+  section:last-of-type{
+    border-bottom:none;
+  }
+
+  h2{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-weight:600;
+    font-size:1.6rem;
+    margin-bottom:1.5rem;
+    position:relative;
+    padding-left:1rem;
+    border-left:3px solid var(--branco);
+  }
+
+  .historia p{
+    font-size:1.08rem;
+    color:#dedede;
+    margin-bottom:1.2rem;
+    max-width:65ch;
+  }
+
+  strong{
+    color:var(--branco);
+    font-weight:700;
+  }
+
+  em{
+    color:#c9c9c4;
+  }
+
+  ul.lista{
+    list-style:none;
+  }
+
+  ul.lista li{
+    padding: 1rem 0;
+    border-bottom:1px dashed var(--linha);
+    display:flex;
+    gap:1rem;
+    align-items:baseline;
+    font-size:1.05rem;
+  }
+
+  ul.lista li:last-child{
+    border-bottom:none;
+  }
+
+  ul.lista li .marcador{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.85rem;
+    color:var(--cinza);
+    min-width:2rem;
+  }
+
+  .curiosidade{
+    background:var(--preto-suave);
+    border-radius:4px;
+    padding:2rem;
+    font-style:italic;
+    color:#d9d9d4;
+    border-left:3px solid var(--branco);
+  }
+
+  footer{
+    text-align:center;
+    padding:2.5rem 1.5rem;
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:0.85rem;
+    color:var(--cinza);
+  }
+
+  @media (max-width: 480px){
+    .apresentacao .dados{ flex-direction:column; gap:0.4rem; }
+    .apresentacao .dados span:not(:last-child)::after{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="apresentacao">
+  <div class="escudo"><span>SCCP</span></div>
+  <h1 class="nome-clube">Sport Club Corinthians Paulista</h1>
+  <div class="dados">
+    <span>São Paulo, SP</span>
+    <span>Fundado em 1º de setembro de 1910</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="historia">
+    <h2>História</h2>
+    <p>
+      O Corinthians nasceu em 1910, fundado por um grupo de operários e trabalhadores
+      do bairro do Bom Retiro, em São Paulo. O nome do clube é uma homenagem ao
+      <em>Corinthian Football Club</em>, time inglês que havia excursionado pelo Brasil
+      naquele mesmo ano e impressionado seus fundadores.
+    </p>
+    <p>
+      Ao longo de mais de um século, o clube se tornou um dos maiores e mais populares
+      do país, construindo uma torcida imensa e apaixonada. <strong>O Corinthians é um
+      dos clubes com maior número de torcedores do Brasil</strong>, e sua trajetória é
+      marcada por jejuns históricos, reconstruções e conquistas memoráveis, como o
+      célebre título brasileiro de 1990 e o icônico ano de 2012, quando venceu a
+      Libertadores e o Mundial de Clubes.
+    </p>
+  </section>
+
+  <section class="titulos">
+    <h2>Principais títulos</h2>
+    <ul class="lista">
+      <li><span class="marcador">01</span> Copa Libertadores da América (2012)</li>
+      <li><span class="marcador">02</span> Mundial de Clubes da FIFA (2000 e 2012)</li>
+      <li><span class="marcador">03</span> Campeonato Brasileiro (1990, 1998, 1999, 2005, 2011, 2015 e 2017)</li>
+      <li><span class="marcador">04</span> Copa do Brasil (1995, 2002 e 2009)</li>
+    </ul>
+  </section>
+
+  <section class="idolos">
+    <h2>Ídolos</h2>
+    <ul class="lista">
+      <li><span class="marcador">—</span> Sócrates, ícone da <em>Democracia Corinthiana</em> nos anos 1980</li>
+      <li><span class="marcador">—</span> Rivelino, um dos maiores craques da história do futebol brasileiro</li>
+      <li><span class="marcador">—</span> Marcelinho Carioca, artilheiro e ídolo dos anos 1990 e 2000</li>
+      <li><span class="marcador">—</span> Cássio, goleiro campeão da Libertadores e do Mundial de 2012</li>
+    </ul>
+  </section>
+
+  <section class="curiosidade-section">
+    <h2>Curiosidade</h2>
+    <p class="curiosidade">
+      O nome "Corinthians" existe por acaso da história: em 1910, o time inglês amador
+      Corinthian Football Club fez uma turnê pelo Brasil e encantou o público paulistano
+      com seu estilo de jogo. Um grupo de amigos, inspirado por essa visita, decidiu batizar
+      o clube recém-fundado em homenagem aos visitantes britânicos.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Sport Club Corinthians Paulista &mdash; São Paulo, Brasil
+</footer>
+
+</body>
+</html>

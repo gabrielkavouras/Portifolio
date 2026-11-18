@@ -1,0 +1,64 @@
+/* Configuração geral: somente cores por nome */
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; background-color: whitesmoke; color: darkslategray; line-height: 1.6; }
+a { color: royalblue; overflow-wrap: anywhere; }
+
+/* Cabeçalho e menu */
+.cabecalho { background-color: navy; color: white; padding: 30px; text-align: center; }
+.cabecalho h1 { font-size: 32px; margin: 0; }
+.menu a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; }
+.menu a:hover { color: gold; text-decoration: underline; }
+#btn-menu { display: none; margin-top: 10px; padding: 10px 16px; background-color: gold; color: navy; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+
+/* Layout principal com Flexbox */
+.layout { display: flex; gap: 20px; max-width: 1100px; margin: 25px auto; padding: 0 15px; }
+.principal { flex: 3; min-width: 0; }
+.extra { flex: 1; align-self: flex-start; background-color: lightyellow; border-left: 6px solid gold; }
+
+/* Seções, cards e botões */
+.secao { background-color: white; margin-bottom: 25px; padding: 25px; border: 1px solid lightgray; border-radius: 10px; }
+.cards { display: flex; gap: 20px; flex-wrap: wrap; }
+.card { background-color: aliceblue; border: 2px solid lightblue; border-radius: 12px; padding: 20px; flex: 1; min-width: 220px; overflow-wrap: anywhere; }
+.botao, .filtro { display: inline-block; margin: 6px 6px 0 0; padding: 10px 16px; background-color: royalblue; color: white; text-decoration: none; border: 2px solid royalblue; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+.botao:hover, .filtro:hover { background-color: mediumblue; }
+.filtro[aria-pressed="true"] { background-color: navy; border-color: gold; text-decoration: underline; }
+.aviso { background-color: lightyellow; padding: 12px; border-left: 6px solid gold; }
+
+/* Tabela */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th { background-color: navy; color: white; }
+th, td { border: 1px solid lightgray; padding: 12px; text-align: left; }
+tr:nth-child(even) { background-color: aliceblue; }
+caption { text-align: left; font-size: 14px; }
+
+/* Formulário */
+form { display: flex; flex-direction: column; }
+label { margin-top: 12px; font-weight: bold; }
+input, textarea, select { margin-top: 5px; padding: 10px; border: 1px solid gray; border-radius: 6px; font-size: 16px; width: 100%; font-family: inherit; }
+input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"] { border: 3px solid crimson; }
+.dica { font-size: 14px; }
+.erro { color: darkred; font-weight: bold; font-size: 14px; }
+.erro:not(:empty)::before { content: "Erro: "; }
+.resumo { background-color: mistyrose; border: 2px solid crimson; padding: 12px; border-radius: 6px; }
+form button[type="submit"] { margin-top: 15px; padding: 12px; background-color: navy; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+form button[type="submit"]:disabled { background-color: gray; cursor: wait; }
+#status { font-weight: bold; }
+
+/* Foco visível */
+:focus-visible { outline: 3px solid darkorange; outline-offset: 3px; }
+
+.rodape { background-color: navy; color: white; text-align: center; padding: 20px; }
+
+/* Responsividade: o layout em duas colunas deixa de caber abaixo de 768px */
+@media (max-width: 768px) {
+  .layout { flex-direction: column; }
+  #btn-menu { display: inline-block; }
+  .menu { display: none; }
+  .menu.aberto { display: block; }
+  .menu a { display: block; margin: 10px 0; }
+  .cards { flex-direction: column; }
+  .cabecalho h1 { font-size: 24px; }
+  .secao { padding: 16px; }
+  table { display: block; overflow-x: auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

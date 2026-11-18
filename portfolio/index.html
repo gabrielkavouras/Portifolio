@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio - Gabriel Kyriacos Santos Kavouras</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Cabeçalho do portfólio -->
+  <header class="cabecalho">
+    <h1>Gabriel Kyriacos Santos Kavouras</h1>
+    <p>Estudante de Engenharia de Software</p>
+    <button id="btn-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" class="menu" aria-label="Principal">
+      <a href="#sobre">Sobre mim</a>
+      <a href="#conhecimentos">Conhecimentos</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="layout">
+    <div class="principal">
+      <section id="sobre" class="secao">
+        <h2>Sobre mim</h2>
+        <p>Sou uma pessoa que gosta muito de tecnologia, jogos e música. Decidi cursar Engenharia de Software depois de programar um jogo 2D com meu pai, e desde então tomei gosto pela programação.</p>
+        <p>Meu objetivo profissional é trabalhar com cibersegurança e, no futuro, atuar como gerente de projetos.</p>
+      </section>
+
+      <section id="conhecimentos" class="secao">
+        <h2>Conhecimentos</h2>
+        <table>
+          <caption>Tecnologias estudadas na disciplina de Programação Front-End</caption>
+          <thead><tr><th>Tecnologia</th><th>Situação</th><th>Onde aplico</th></tr></thead>
+          <tbody>
+            <tr><td>HTML</td><td>Em aprendizado</td><td>Estrutura semântica das páginas</td></tr>
+            <tr><td>CSS</td><td>Em aprendizado</td><td>Estilo, Flexbox e responsividade</td></tr>
+            <tr><td>JavaScript</td><td>Em aprendizado</td><td>DOM, eventos, filtro e formulário</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="projetos" class="secao">
+        <h2>Projetos</h2>
+        <p>Projetos desenvolvidos nas aulas de Programação Front-End (UCSAL).</p>
+        <div id="filtros" role="group" aria-label="Filtrar projetos por tecnologia"></div>
+        <p id="contagem" role="status"></p>
+        <div id="lista-projetos" class="cards"></div>
+        <p id="sem-resultado" class="aviso" hidden>Nenhum projeto encontrado. Escolha outra tecnologia ou "Todos".</p>
+      </section>
+
+      <section id="contato" class="secao">
+        <h2>Contato</h2>
+        <p>Contato real: <a href="mailto:gabrielkavouras@gmail.com">gabrielkavouras@gmail.com</a> ou <a href="https://www.linkedin.com/in/gabriel-kyriacos-santos-kavouras-9845b9341/">perfil no LinkedIn</a>.</p>
+        <form id="form-contato" novalidate>
+          <div id="resumo" class="resumo" tabindex="-1" hidden></div>
+
+          <label for="nome">Nome</label>
+          <span id="dica-nome" class="dica">De 3 a 80 caracteres.</span>
+          <input type="text" id="nome" name="nome" required autocomplete="name" aria-describedby="dica-nome erro-nome">
+          <span id="erro-nome" class="erro"></span>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="erro-email">
+          <span id="erro-email" class="erro"></span>
+
+          <label for="motivo">Motivo do contato</label>
+          <select id="motivo" name="motivo" required aria-describedby="erro-motivo">
+            <option value="">Selecione um motivo</option>
+            <option value="Oportunidade profissional">Oportunidade profissional</option>
+            <option value="Projeto freelance">Projeto freelance</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <span id="erro-motivo" class="erro"></span>
+
+          <div id="grupo-assunto" hidden>
+            <label for="assunto">Assunto adicional</label>
+            <span id="dica-assunto" class="dica">De 5 a 100 caracteres.</span>
+            <input type="text" id="assunto" name="assunto" disabled aria-describedby="dica-assunto erro-assunto">
+            <span id="erro-assunto" class="erro"></span>
+          </div>
+
+          <label for="mensagem">Mensagem</label>
+          <span id="dica-mensagem" class="dica">De 30 a 1000 caracteres. <span id="contador">0/1000</span></span>
+          <textarea id="mensagem" name="mensagem" rows="5" required aria-describedby="dica-mensagem erro-mensagem"></textarea>
+          <span id="erro-mensagem" class="erro"></span>
+
+          <label for="modo-teste">Resultado da simulação (teste)</label>
+          <select id="modo-teste">
+            <option value="sucesso">Sucesso</option>
+            <option value="falha">Falha</option>
+          </select>
+
+          <button type="submit" id="btn-enviar">Enviar mensagem</button>
+          <p id="status" role="status"></p>
+        </form>
+      </section>
+    </div>
+
+    <!-- Informações complementares -->
+    <aside class="secao extra">
+      <h2>Informações extras</h2>
+      <ul>
+        <li>Objetivo: cibersegurança e gestão de projetos</li>
+        <li>Interesses: tecnologia, jogos e música</li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/gabriel-kyriacos-santos-kavouras-9845b9341/">Gabriel Kyriacos</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p>Portfólio de Gabriel Kyriacos Santos Kavouras - 2026</p>
+    <p>Desenvolvido como atividade da disciplina de Programação Front-End (UCSAL).</p>
+  </footer>
+</body>
+</html>
